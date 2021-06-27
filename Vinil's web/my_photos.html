@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Photographs</title>
+  </head>
+  <style>
+    @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+    @import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
+    .fa-2x {
+    font-size: 2em;
+    }
+    .fa {
+    position: relative;
+    display: table-cell;
+    width: 60px;
+    height: 36px;
+    text-align: center;
+    vertical-align: middle;
+    font-size:20px;
+    }
+
+
+    .main-menu:hover,nav.main-menu.expanded {
+    width:250px;
+    overflow:visible;
+    }
+
+    .main-menu {
+    background:#212121;
+    border-right:1px solid #e5e5e5;
+    position:fixed;
+    top:0;
+    bottom:0;
+    height: 100%;
+    left:0;
+    width:60px;
+    overflow:hidden;
+    -webkit-transition:width .05s linear;
+    transition:width .05s linear;
+    -webkit-transform:translateZ(0) scale(1,1);
+    z-index:1000;
+    }
+
+    .main-menu>ul {
+    margin:7px 0;
+    }
+
+    .main-menu li {
+    position:relative;
+    display:block;
+    width:250px;
+    }
+
+    .main-menu li>a {
+    position:relative;
+    display:table;
+    border-collapse:collapse;
+    border-spacing:0;
+    color:#999;
+     font-family: arial;
+    font-size: 14px;
+    text-decoration:none;
+    -webkit-transform:translateZ(0) scale(1,1);
+    -webkit-transition:all .1s linear;
+    transition:all .1s linear;
+
+    }
+
+    .main-menu .nav-icon {
+    position:relative;
+    display:table-cell;
+    width:60px;
+    height:36px;
+    text-align:center;
+    vertical-align:middle;
+    font-size:18px;
+    }
+
+    .main-menu .nav-text {
+    position:relative;
+    display:table-cell;
+    vertical-align:middle;
+    width:190px;
+      font-family: 'Titillium Web', sans-serif;
+    }
+
+    .main-menu>ul.logout {
+    position:absolute;
+    left:0;
+    bottom:0;
+    }
+
+    .no-touch .scrollable.hover {
+    overflow-y:hidden;
+    }
+
+    .no-touch .scrollable.hover:hover {
+    overflow-y:auto;
+    overflow:visible;
+    }
+
+    a:hover,a:focus {
+    text-decoration:none;
+    }
+
+    nav {
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    -o-user-select:none;
+    user-select:none;
+    }
+
+    nav ul,nav li {
+    outline:0;
+    margin:0;
+    padding:0;
+    }
+    .main-menu li:hover>a,nav.main-menu li.active>a,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,.dashboard-page nav.dashboard-menu ul li.active a {
+    color:rgb(111, 214, 255);
+    
+    }
+    .area {
+    float: left;
+    background: #e2e2e2;
+    width: 100%;
+    height: 100%;
+    }
+    @font-face {
+      font-family: 'Titillium Web';
+      font-style: normal;
+      font-weight: 300;
+      src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');
+    }
+
+    .header {
+        width: 100%;
+        height: 15vh;
+        position: relative;
+        text-align: center;
+        display: block;
+        background: linear-gradient(
+          60deg,
+          rgba(84, 58, 183, 1) 0%,
+          rgba(0, 172, 193, 1) 100%
+        );
+        color: white;
+      }
+      
+      .inner-header {
+        width: 1000px;
+        height: 100%;
+        margin: 0 auto;
+        padding: 0;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        text-decoration: 0;
+      }
+
+      
+       .flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+    body {
+      font-family: "Lato", sans-serif;
+        letter-spacing: 1px;
+    }
+    div.gallery {
+  border: 1px solid #ccc;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+  padding-left: 5px;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 95%;
+    padding-left: 60px;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.button {
+  border-radius: 4px;
+  background: linear-gradient(
+          60deg,
+          rgba(84, 58, 183, 1) 0%,
+          rgba(0, 172, 193, 1) 100%
+        );
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  height: 100px;
+  width: 200px;
+  margin: -35px;
+}
+.button:hover {
+  opacity: 0.7;
+  } 
+  #myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: rgba(0, 172, 193, 1);
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+
+
+  }#myBtn:hover {
+  background-color: #555;
+}
+    .madeby {
+      color: #999;
+    }
+  </style>
+
+  <html>
+    <body>
+      <div class="header">
+        <div class="inner-header flex"><h1>My Photographs</h1></div>
+      </div>
+          <div class="area"></div>
+          <nav class="main-menu">
+            <ul>
+              <li>
+                <a href="index.html">
+                  <i class="fa fa-home fa-2x"></i>
+                  <span class="nav-text"> Home </span>
+                </a>
+              </li>
+              <li class="has-subnav">
+                <a href="about.html">
+                  <i class="fa fa-user fa-2x"></i>
+                  <span class="nav-text"> About Me </span>
+                </a>
+              </li>
+              <li class="has-subnav">
+                <a href="#">
+                  <i class="fa fa-2x"></i>
+                  <span class="nav-text"> Follow Me </span>
+                </a>
+              </li>
+              </li>
+              <li class="has-subnav">
+                <a href="https://www.facebook.com/vinil.vijayan.73">
+                  <i class="fa fa-facebook fa-2x"></i>
+                  <span class="nav-text"> Facebook</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/_the_insane_hulk_/">
+                  <i class="fa fa-instagram fa-2x"></i>
+                  <span class="nav-text"> Instagram </span>
+                </a>
+              </li>
+              <li class="has-subnav">
+                <i class="fa fa-2x"></i>
+                <span class="nav-text"><div class="madeby"> &copy;Made by</div> <a target="_blank"class="madeby" href="https://aryanandhvijayan.netlify.app"> Aryanandh Vijayan</a></span>
+              </li>
+            </ul>
+          </nav>
+         
+
+         <!-- MAIN (Center website) -->
+         <div class="responsive">
+          <div class="gallery">
+            <a target="_blank" href="images/119984326_170275321362633_7792915938476704720_n.jpg">
+              <img src="images/119984326_170275321362633_7792915938476704720_n.jpg" alt="A spider" width="600" height="400">
+            </a>
+            <div class="desc"> <a href="https://www.instagram.com/p/CFeoTe0Hzpn/" class="button" target="_blank">View On Instagram</a></div>
+          </div>
+        </div>
+       
+        </div>
+        <div class="responsive">
+          <div class="gallery">
+            <a target="_blank" href="images/129680183_109013251056803_4151429600648635502_n.jpg">
+              <img src="images/129680183_109013251056803_4151429600648635502_n.jpg" alt="A dragonfly" width="600" height="400">
+            </a>
+            <div class="desc"> <a href="https://www.instagram.com/p/CIarD0vnIrM/" class="button" target="_blank">View On Instagram</a></div>
+          </div>
+        </div>
+        <div class="responsive">
+          <div class="gallery">
+            <a target="_blank" href="images/140449613_413122950011894_5784861393037924091_n.jpg">
+              <img src="images/140449613_413122950011894_5784861393037924091_n.jpg" alt="A flower" width="600" height="400">
+            </a>
+            <div class="desc"> <a href="https://www.instagram.com/p/CKY2Abanbqq/" class="button" target="_blank">View On Instagram</a></div>
+          </div>
+        </div>
+        <div class="responsive">
+          <div class="gallery">
+            <a target="_blank" href="images/159789907_282191426763486_1945601541679105442_n.jpg">
+              <img src="images/159789907_282191426763486_1945601541679105442_n.jpg" alt="" width="600" height="400">
+            </a>
+            <div class="desc"> <a href="https://www.instagram.com/p/CMRwu8WnOUr/" class="button" target="_blank">View On Instagram</a></div>
+          </div>
+        </div>
+        <div class="responsive">
+          <div class="gallery">
+            <a target="_blank" href="images/89940999_529741644621942_8299874629413625824_n.jpg">
+              <img src="images/89940999_529741644621942_8299874629413625824_n.jpg" alt="Cinque Terre" width="600" height="400">
+            </a>
+            <div class="desc"> <a href="https://www.instagram.com/p/B933XeRngv1/" class="button" target="_blank">View On Instagram</a></div>
+          </div>
+        </div>
+        <div class="responsive">
+          <div class="gallery">
+            <a target="_blank" href="/images/GWater.jpg.jpg">
+              <img src="/images/GWater.jpg.jpg" alt="Some water droplets on a car window" width="600" height="400">
+            </a>
+            <div class="desc"> <a href="https://www.instagram.com/p/COCIGJyn7Mh/" class="button" target="_blank">View On Instagram</a></div>
+          </div>
+        </div>
+        
+        <div class="responsive">
+          <div class="gallery">
+            <a target="_blank" href="/images/Bird.jpg.jpg">
+              <img src="/images/Bird.jpg.jpg" alt="A Bird" width="600" height="400">
+            </a>
+            <div class="desc"> <a href="https://www.instagram.com/p/CP8C9V0HLvZ/" class="button" target="_blank">View On Instagram</a></div>
+          </div>
+        </div>
+        <div class="responsive">
+          <div class="gallery">
+            <a target="_blank" href="/images/Butterfly.jpg">
+              <img src="/images/Butterfly.jpg" alt="A Butterfly" width="600" height="400">
+            </a>
+            <div class="desc"> <a href="https://www.instagram.com/p/B46v-eRHaSv/" class="button" target="_blank">View On Instagram</a></div>
+          </div>
+        </div>
+        <div class="responsive">
+          <div class="gallery">
+            <a target="_blank" href="/images/minuk.jpg">
+              <img src="/images/minuk.jpg" alt="minuk" width="600" height="400">
+            </a>
+            <div class="desc"> <a href=https://www.instagram.com/p/B24Tq_dnkB6/"" class="button" target="_blank">View On Instagram</a></div>
+          </div>
+        </div>
+        <div class="responsive">
+          <div class="gallery">
+            <a target="_blank" href="/images/FlowerB.jpg">
+              <img src="/images/FlowerB.jpg" alt="A Beatifull Flower" width="600" height="400">
+            </a>
+            <div class="desc"> <a href="https://www.instagram.com/p/B57gS6WnhrX/" class="button" target="_blank">View On Instagram</a></div>
+          </div>
+        </div>
+        <div class="responsive">
+          <div class="gallery">
+            <a target="_blank" href="/images/Theyyam.jpg">
+              <img src="/images/Theyyam.jpg" alt="Theyyam" width="600" height="400">
+            </a>
+            <div class="desc"> <a href="instagram.com" class="button" target="_blank">View On Instagram</a></div>
+          </div>
+        </div>
+        <div class="responsive">
+          <div class="gallery">
+            <a target="_blank" href="images/DSC_0137.JPG">
+              <img src="images/DSC_0137.JPG" alt="Cinque Terre" width="600" height="400">
+            </a>
+          </div>
+
+        <div class="clearfix"></div>
+        
+        <div style="padding:6px;">
+          <!--Buttom for jumping to top-->
+          <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+          <!--Javascript starts from here-->
+<script>
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+          </script>
+  
+        </body>
+      </html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
+      @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+    @import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
+    .fa-2x {
+    font-size: 2em;
+    }
+    .fa {
+    position: relative;
+    display: table-cell;
+    width: 60px;
+    height: 36px;
+    text-align: center;
+    vertical-align: middle;
+    font-size:20px;
+    }
+
+
+    .main-menu:hover,nav.main-menu.expanded {
+    width:215px;
+    overflow:visible;
+    }
+
+    .main-menu {
+    background:#212121;
+    border-right:1px solid #e5e5e5;
+    position:fixed;
+    top:0;
+    bottom:0;
+    height: 100%;
+    left:0;
+    width:40px;
+    overflow:hidden;
+    -webkit-transition:width .05s linear;
+    transition:width .05s linear;
+    -webkit-transform:translateZ(0) scale(1,1);
+    z-index:1000;
+    }
+
+    .main-menu>ul {
+    margin:7px 0;
+    }
+
+    .main-menu li {
+    position:relative;
+    display:block;
+    width:145px;
+    }
+
+    .main-menu li>a {
+    position:relative;
+    display:table;
+    border-collapse:collapse;
+    border-spacing:0;
+    color:#999;
+     font-family: arial;
+    font-size: 14px;
+    text-decoration:none;
+    -webkit-transform:translateZ(0) scale(1,1);
+    -webkit-transition:all .1s linear;
+    transition:all .1s linear;
+
+    }
+
+    .main-menu .nav-icon {
+    position:relative;
+    display:table-cell;
+    width:60px;
+    height:36px;
+    text-align:center;
+    vertical-align:middle;
+    font-size:18px;
+    }
+
+    .main-menu .nav-text {
+    position:relative;
+    display:table-cell;
+    vertical-align:middle;
+    width:190px;
+      font-family: 'Titillium Web', sans-serif;
+    }
+
+    .main-menu>ul.logout {
+    position:absolute;
+    left:0;
+    bottom:0;
+    }
+
+    .no-touch .scrollable.hover {
+    overflow-y:hidden;
+    }
+
+    .no-touch .scrollable.hover:hover {
+    overflow-y:auto;
+    overflow:visible;
+    }
+
+    a:hover,a:focus {
+    text-decoration:none;
+    }
+
+    nav {
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    -o-user-select:none;
+    user-select:none;
+    }
+
+    nav ul,nav li {
+    outline:0;
+    margin:0;
+    padding:0;
+    }
+    .main-menu li:hover>a,nav.main-menu li.active>a,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,.dashboard-page nav.dashboard-menu ul li.active a {
+    color:rgb(111, 214, 255);
+    
+    }
+    .area {
+    float: left;
+    background: #e2e2e2;
+    width: 100%;
+    height: 100%;
+    }
+    @font-face {
+      font-family: 'Titillium Web';
+      font-style: normal;
+      font-weight: 300;
+      src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');
+    }
+      body {
+        margin: 0;
+      }
+
+      h1 {
+        font-family: "Lato", sans-serif;
+        font-weight: 300;
+        letter-spacing: 2px;
+        font-size: 48px;
+      }
+      p {
+        font-family: "Lato", sans-serif;
+        letter-spacing: 1px;
+        font-size: 14px;
+        color: #333333;
+      }
+
+      .header {
+        position: relative;
+        text-align: center;
+        background: linear-gradient(
+          60deg,
+          rgba(84, 58, 183, 1) 0%,
+          rgba(0, 172, 193, 1) 100%
+        );
+        color: white;
+      }
+
+      .inner-header {
+        height: 65vh;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .flex {
+        /*Flexbox for containers*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .waves {
+        position: relative;
+        width: 100%;
+        height: 15vh;
+        margin-bottom: -7px; /*Fix for safari gap*/
+        min-height: 100px;
+        max-height: 150px;
+      }
+
+      .content {
+        position: relative;
+        height: 20vh;
+        text-align: center;
+        background-color: white;
+      }
+
+      /* Animation */
+
+      .parallax > use {
+        animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+      }
+      .parallax > use:nth-child(1) {
+        animation-delay: -2s;
+        animation-duration: 7s;
+      }
+      .parallax > use:nth-child(2) {
+        animation-delay: -3s;
+        animation-duration: 10s;
+      }
+      .parallax > use:nth-child(3) {
+        animation-delay: -4s;
+        animation-duration: 13s;
+      }
+      .parallax > use:nth-child(4) {
+        animation-delay: -5s;
+        animation-duration: 20s;
+      }
+      @keyframes move-forever {
+        0% {
+          transform: translate3d(-90px, 0, 0);
+        }
+        100% {
+          transform: translate3d(85px, 0, 0);
+        }
+      }
+      /*Shrinking for mobile*/
+      @media (max-width: 768px) {
+        .waves {
+          height: 40px;
+          min-height: 40px;
+        }
+        .content {
+          height: 30vh;
+        }
+        h1 {
+          font-size: 24px;
+        }
+      }
+      h2 {
+        text-align: center;
+        font-family: "Lato", sans-serif;
+        letter-spacing: 1px;
+        color: #333333;
+      }
+    .madeby {
+      color: #999;
+    }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <!--Content before waves-->
+        <div class="inner-header flex">
+          <h1>Vinil Vijayan</h1>
+        </div>
+        <!--Waves Container-->
+            <div class="area"></div>
+            <nav class="main-menu">
+              <ul>
+                <li>
+                  <a href="my_photos.html">
+                    <i class="fa fa-camera fa-2x"></i>
+                    <span class="nav-text"> My photography </span>
+                  </a>
+                </li>
+                <li class="has-subnav">
+                  <a href="about.html">
+                    <i class="fa fa-user fa-2x"></i>
+                    <span class="nav-text"> About Me </span>
+                  </a>
+                </li>
+                <li class="has-subnav">
+                  <a href="#">
+                    <i class="fa fa-2x"></i>
+                    <span class="nav-text"> Follow Me </span>
+                  </a>
+                </li>
+                </li>
+                <li class="has-subnav">
+                  <a href="https://www.facebook.com/vinil.vijayan.73">
+                    <i class="fa fa-facebook fa-2x"></i>
+                    <span class="nav-text"> Facebook</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/_the_insane_hulk_/">
+                    <i class="fa fa-instagram fa-2x"></i>
+                    <span class="nav-text"> Instagram </span>
+                  </a>
+                </li>
+                <li class="has-subnav">
+                  <i class="fa fa-2x"></i>
+                  <span class="nav-text"> <div class="madeby"> &copy;Made by</div> <a target="_blank"class="madeby" href="https://aryanandhvijayan.netlify.app"> Aryanandh Vijayan</a></span>
+                </li>
+              </ul>
+            </nav>
+          <svg
+            class="waves"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28"
+            preserveAspectRatio="none"
+            shape-rendering="auto"
+          >
+            <defs>
+              <path
+                id="gentle-wave"
+                d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+              />
+            </defs>
+            <g class="parallax">
+              <use
+                xlink:href="#gentle-wave"
+                x="48"
+                y="0"
+                fill="rgba(255,255,255,0.7"
+              />
+              <use
+                xlink:href="#gentle-wave"
+                x="48"
+                y="3"
+                fill="rgba(255,255,255,0.5)"
+              />
+              <use
+                xlink:href="#gentle-wave"
+                x="48"
+                y="5"
+                fill="rgba(255,255,255,0.3)"
+              />
+              <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+            </g>
+          </svg>
+        </div>
+        <!--Waves end-->
+      </div>
+      <!--Header ends-->
+
+      <!--Content starts-->
+      <div class="content flex">
+        <p>Hi,I am Vinil Vijayan and I love photography</p>
+      </div>
+      <!--Content ends-->
+    </header>
+  </body>
+</html>
