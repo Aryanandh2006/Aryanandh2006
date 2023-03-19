@@ -1,4 +1,5 @@
 ### Hi there 👋
+Im learning to code so nothing to see on my profile.
 
 <!--
 **Aryanandh2006/Aryanandh2006** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
